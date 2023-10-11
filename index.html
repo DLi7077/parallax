@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer>
+      addEventListener("scroll", (event) => {
+        const bridgeImage = document.getElementById("bridge");
+        const avatarImage = document.getElementById("avatar-container");
+
+        // play around with these numbers and see what happens
+        const maxOffset = Math.min(window.scrollY / 4, 200);
+        const bridgeStartBottom = -250; // look at css
+        bridgeImage.style.bottom = `${bridgeStartBottom + maxOffset * 1.25}px`;
+        avatarImage.style.transform = `translate(0,${maxOffset * 2}px)`;
+      });
+    </script>
+  </head>
+  <body>
+    <div class="section">
+      <div class="background">
+        <img
+          src="https://rapidpages.de/shop/parallax_image_pack/bridge/files/bgImage-915.jpg"
+          class="background"
+          id="forest"
+        />
+      </div>
+      <img
+        src="https://rapidpages.de/shop/parallax_image_pack/bridge/files/bgImage-916.png"
+        class="background"
+        id="bridge"
+      />
+      <div id="avatar-container">
+        <img
+          id="avatar"
+          src="https://storage.googleapis.com/katsudon-assets/user-profiles/6306b34920cf5f80f7d0c20d/pfp.jpg"
+        />
+        <div id="avatar-name">Devin</div>
+      </div>
+    </div>
+    <div class="section">
+      <img
+        class="background"
+        src="https://storage.googleapis.com/katsudon-assets/user-profiles/6306b34920cf5f80f7d0c20d/banner.jpg"
+      />
+    </div>
+    <div class="section">
+      <img
+        class="background"
+        src="https://dli7077.github.io/katsudon-client/static/media/banner.07cd0fbc.jpg"
+      />
+    </div>
+  </body>
+</html>
